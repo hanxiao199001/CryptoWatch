@@ -38,3 +38,7 @@ python app.py
 ## 许可证
 
 GPL-2.0 License
+
+## 📈 Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=hanxiao199001/CryptoWatch&type=Date)](https://star-history.com/#hanxiao199001/CryptoWatch&Date)
