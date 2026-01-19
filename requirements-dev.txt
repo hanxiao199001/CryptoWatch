@@ -1,0 +1,14 @@
+# 开发工具
+black==23.12.1
+flake8==7.0.0
+mypy==1.8.0
+pre-commit==3.6.0
+
+# 测试工具
+pytest==7.4.4
+pytest-cov==4.1.0
+pytest-asyncio==0.23.3
+
+# 文档工具
+mkdocs==1.5.3
+mkdocs-material==9.5.3
