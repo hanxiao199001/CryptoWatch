@@ -1,4 +1,4 @@
-# 📋 BettaFish Mini - 项目展示清单
+# 📋 CryptoWatch - 项目展示清单
 
 ## 🎯 展示准备清单
 
@@ -32,7 +32,7 @@
 
 ### 1. 开场 (30秒)
 ```
-"我开发了一个Multi-Agent舆情分析系统,叫BettaFish Mini。
+"我开发了一个Multi-Agent舆情分析系统,叫CryptoWatch。
 它能够自动收集Web3市场数据,通过多个AI专家Agent协作分析,
 最终生成专业的投资分析报告。整个系统基于三层架构设计,
 包含数据层、分析层和输出层。"
@@ -60,9 +60,9 @@
 ### 3. Demo演示 (2分钟)
 ```python
 # 展示代码
-from bettafish_mini import BettaFishMini
+from cryptowatch import CryptoWatch
 
-betta = BettaFishMini()
+betta = CryptoWatch()
 
 # 完整分析
 result = betta.analyze("Ethereum", "ethereum")
@@ -114,7 +114,7 @@ except Exception as e:
 ## 💼 简历描述模板
 
 ### 项目标题
-**BettaFish Mini - Multi-Agent舆情分析系统**
+**CryptoWatch - Multi-Agent舆情分析系统**
 
 ### 项目描述
 ```
@@ -200,7 +200,7 @@ def conduct_analysis(self, data, topic):
 
 准备一份完整的运行日志:
 ```
-🐟 BettaFish Mini v1.0
+🐟 CryptoWatch v1.0
 ━━━━━━━━━━━━━━━━━━━━━━━━
 
 【阶段1: 数据收集】 ✅
@@ -317,7 +317,7 @@ def conduct_analysis(self, data, topic):
 
 **开场白**:
 ```
-大家好,今天我要展示的是BettaFish Mini,一个我从零开始
+大家好,今天我要展示的是CryptoWatch,一个我从零开始
 构建的Multi-Agent舆情分析系统。这个项目用了10天时间,
 实现了从数据收集到报告生成的完整自动化流程。
 ```
@@ -339,7 +339,7 @@ def conduct_analysis(self, data, topic):
 
 **结尾**:
 ```
-以上就是BettaFish Mini的展示。这个项目让我深入理解了
+以上就是CryptoWatch的展示。这个项目让我深入理解了
 Multi-Agent系统的设计,也提升了我的工程化开发能力。
 项目的完整代码和文档都在GitHub上,欢迎大家查看。
 谢谢!

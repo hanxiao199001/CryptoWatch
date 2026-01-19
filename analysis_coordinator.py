@@ -1,5 +1,5 @@
 """
-BettaFish Mini - 分析协调器
+CryptoWatch - 分析协调器
 协调多个Agent进行深度分析
 """
 

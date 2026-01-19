@@ -1,6 +1,6 @@
-# 📖 BettaFish Mini - 用户手册
+# 📖 CryptoWatch - 用户手册
 
-欢迎使用BettaFish Mini! 本手册将帮助你快速上手这个强大的Multi-Agent舆情分析系统。
+欢迎使用CryptoWatch! 本手册将帮助你快速上手这个强大的Multi-Agent舆情分析系统。
 
 ---
 
@@ -58,7 +58,7 @@
 
 ### 第三步: 运行第一个分析
 ```bash
-python bettafish_mini.py
+python cryptowatch.py
 ```
 
 🎉 看到完整的分析流程就说明成功了!
@@ -71,10 +71,10 @@ python bettafish_mini.py
 
 分析单个加密货币项目并生成报告:
 ```python
-from bettafish_mini import BettaFishMini
+from cryptowatch import CryptoWatch
 
 # 创建系统
-betta = BettaFishMini()
+betta = CryptoWatch()
 
 # 分析Ethereum
 result = betta.analyze(
@@ -152,11 +152,11 @@ betta.analyze(
 创建自己的分析脚本:
 ```python
 # my_analysis.py
-from bettafish_mini import BettaFishMini
+from cryptowatch import CryptoWatch
 
 def analyze_top_coins():
     """分析市值前10的加密货币"""
-    betta = BettaFishMini()
+    betta = CryptoWatch()
     
     top_coins = [
         ("Bitcoin", "bitcoin"),
@@ -180,7 +180,7 @@ if __name__ == "__main__":
 使用cron或其他调度工具定期分析:
 ```bash
 # crontab示例 - 每天早上9点分析
-0 9 * * * cd /path/to/bettafish-mini && python bettafish_mini.py
+0 9 * * * cd /path/to/cryptowatch && python cryptowatch.py
 ```
 
 ---
@@ -283,7 +283,7 @@ mv reports/analysis_202601*.md reports/2026/01/
 ```python
 def batch_analyze(coin_list):
     """批量分析多个币种"""
-    betta = BettaFishMini()
+    betta = CryptoWatch()
     
     results = {}
     for name, coin_id in coin_list:
@@ -326,9 +326,9 @@ if result and 'analyses' in result:
 ### 问题: 模块导入失败
 ```bash
 # 解决方案: 确保在正确的目录
-cd /path/to/bettafish-mini
+cd /path/to/cryptowatch
 source venv/bin/activate
-python -c "import bettafish_mini"
+python -c "import cryptowatch"
 ```
 
 ### 问题: API超时

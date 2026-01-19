@@ -1,4 +1,4 @@
-# 🐟 BettaFish Mini
+# 🐟 CryptoWatch
 
 > 基于Multi-Agent架构的智能舆情分析系统
 
@@ -8,7 +8,7 @@
 
 ## 📋 项目简介
 
-BettaFish Mini 是一个完整的Multi-Agent舆情分析系统,专注于加密货币市场的实时数据收集、智能分析和专业报告生成。
+CryptoWatch 是一个完整的Multi-Agent舆情分析系统,专注于加密货币市场的实时数据收集、智能分析和专业报告生成。
 
 ### ✨ 核心特性
 
@@ -31,7 +31,7 @@ BettaFish Mini 是一个完整的Multi-Agent舆情分析系统,专注于加密�
 ## 🏗️ 系统架构
 ```
 ┌─────────────────────────────────────────────────────────┐
-│                   BettaFish Mini                        │
+│                   CryptoWatch                        │
 ├─────────────────────────────────────────────────────────┤
 │                                                         │
 │  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐ │
@@ -64,8 +64,8 @@ BettaFish Mini 是一个完整的Multi-Agent舆情分析系统,专注于加密�
 
 1. **克隆项目**
 ```bash
-git clone https://github.com/your-username/bettafish-mini.git
-cd bettafish-mini
+git clone https://github.com/your-username/cryptowatch.git
+cd cryptowatch
 ```
 
 2. **创建虚拟环境**
@@ -87,7 +87,7 @@ cp .env.example .env
 
 5. **运行系统**
 ```bash
-python bettafish_mini.py
+python cryptowatch.py
 ```
 
 ---
@@ -96,10 +96,10 @@ python bettafish_mini.py
 
 ### 1. 完整分析
 ```python
-from bettafish_mini import BettaFishMini
+from cryptowatch import CryptoWatch
 
 # 创建系统实例
-betta = BettaFishMini()
+betta = CryptoWatch()
 
 # 分析Ethereum
 result = betta.analyze(
@@ -161,8 +161,8 @@ results = betta.compare_projects([
 
 ## 📁 项目结构
 ```
-bettafish-mini/
-├── bettafish_mini.py          # 主系统入口
+cryptowatch/
+├── cryptowatch.py          # 主系统入口
 ├── data_agents.py             # 数据收集Agent
 ├── analysis_coordinator.py    # 分析协调器
 ├── web3_data_agent.py         # Web3数据Agent
@@ -204,7 +204,7 @@ bettafish-mini/
 
 ### 完整分析流程
 ```
-🐟 BettaFish Mini v1.0
+🐟 CryptoWatch v1.0
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 【阶段1: 数据收集】

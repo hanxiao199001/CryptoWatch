@@ -1,4 +1,4 @@
-# BettaFish Mini - 依赖包列表
+# CryptoWatch - 依赖包列表
 # Python 3.9+
 
 # ===== 核心依赖 =====

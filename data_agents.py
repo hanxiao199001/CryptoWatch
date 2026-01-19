@@ -1,5 +1,5 @@
 """
-BettaFish Mini - 数据Agent集合
+CryptoWatch - 数据Agent集合
 整合所有数据源
 """
 
