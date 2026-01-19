@@ -11,13 +11,29 @@
 [![GitHub Issues](https://img.shields.io/github/issues/hanxiao199001/CryptoWatch?style=for-the-badge&logo=github)](https://github.com/hanxiao199001/CryptoWatch/issues)
 [![License](https://img.shields.io/badge/license-GPL--2.0-green.svg?style=for-the-badge)](LICENSE)
 
-[![Python](https://img.shields.io/badge/python-3.11+-blue.svg?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org)
+[![Python](https://img.shields.io/badge/python-3.9+-blue.svg?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org)
 [![LangGraph](https://img.shields.io/badge/LangGraph-latest-orange?style=for-the-badge)](https://github.com/langchain-ai/langgraph)
 [![DeepSeek](https://img.shields.io/badge/DeepSeek-API-purple?style=for-the-badge)](https://www.deepseek.com)
 
 <p>灵感来源于 <a href="https://github.com/666ghj/BettaFish">BettaFish</a> | 专注于 Web3 领域的实时舆情分析</p>
 
 </div>
+
+---
+
+## 📑 目录
+
+- [核心特性](#-核心特性)
+- [系统架构](#-系统架构)
+- [快速开始](#-快速开始)
+- [文档中心](#-文档中心)
+- [智能体系统](#-智能体系统)
+- [技术栈](#-技术栈)
+- [使用示例](#-使用示例)
+- [参与贡献](#-参与贡献)
+- [开发路线图](#-开发路线图)
+- [常见问题](#-常见问题-faq)
+- [许可证](#-许可证)
 
 ---
 
@@ -82,36 +98,56 @@ graph TB
 
 <details>
 <summary>📁 项目结构（点击展开）</summary>
+
 ```
 CryptoWatch/
 ├── 📊 analysis_coordinator.py   # 分析协调器
 ├── 📡 data_agents.py            # 数据采集智能体
 ├── 💬 forum_agents.py           # 论坛分析智能体
 ├── 📝 report_agent.py           # 报告生成智能体
-├── ⛓️  web3_data_agent.py        # Web3数据智能体
-├── 🚀 cryptowatch.py         # 主程序入口
+├── ⛓️  web3_data_agent.py       # Web3数据智能体
+├── 🚀 bettafish_mini.py         # 主程序入口
 ├── 📚 docs/                     # 项目文档
-│   ├── ARCHITECTURE.md       
-│   ├── USER_GUIDE.md         
-│   ├── PROJECT_SUMMARY.md    
-│   └── installation.md       
+│   ├── ARCHITECTURE.md         # 架构说明
+│   ├── USER_GUIDE.md           # 用户指南
+│   ├── PROJECT_SUMMARY.md      # 项目总结
+│   └── installation.md         # 安装指南
 ├── 🧪 tests/                    # 测试文件
 ├── 🔧 .github/                  # GitHub配置
-│   ├── workflows/            # CI/CD工作流
-│   └── ISSUE_TEMPLATE/       # Issue模板
-└── 📦 requirements.txt          # 依赖清单
+│   ├── workflows/              # CI/CD工作流
+│   └── ISSUE_TEMPLATE/         # Issue模板
+├── 📦 requirements.txt          # 依赖清单
+├── 🔐 .env.example              # 环境变量示例
+└── 📄 CONTRIBUTING.md           # 贡献指南
 ```
 
 </details>
 
 ## 🚀 快速开始
 
+### ⚡ 三步开始使用
+
+```bash
+# 1. 克隆并进入项目
+git clone https://github.com/hanxiao199001/CryptoWatch.git && cd CryptoWatch
+
+# 2. 安装依赖
+pip install -r requirements.txt
+
+# 3. 配置 API 密钥并运行
+cp .env.example .env
+# 编辑 .env 填入你的 API 密钥
+python bettafish_mini.py
+```
+
+> 💡 **首次使用提示**: 你需要至少一个 LLM API 密钥（DeepSeek 或 Kimi）才能运行系统。
+
 ### 📋 前置要求
 
 | 要求 | 版本 | 说明 |
 |------|------|------|
-| 🐍 Python | 3.11+ | 推荐使用 3.11 或更高版本 |
-| 🐘 PostgreSQL | 15+ | 用于数据持久化 |
+| 🐍 Python | 3.9+ | 推荐使用 3.9 或更高版本 |
+| 🔑 API Keys | - | DeepSeek/Kimi API 密钥 |
 | 💾 内存 | 2GB+ | 建议 4GB 以上 |
 
 ### ⚙️ 安装步骤
@@ -141,11 +177,8 @@ cp .env.example .env
 # 使用你喜欢的编辑器编辑 .env
 nano .env  # 或 vim .env 或 code .env
 
-# 5️⃣ 初始化数据库（如果需要）
-# python scripts/init_db.py
-
-# 6️⃣ 运行主程序
-python cryptowatch.py
+# 5️⃣ 运行主程序
+python bettafish_mini.py
 ```
 
 </details>
@@ -154,21 +187,18 @@ python cryptowatch.py
 
 在 `.env` 文件中配置以下关键参数：
 ```env
-# LLM API 配置
+# LLM API 配置（必需）
 DEEPSEEK_API_KEY=your_deepseek_api_key
 KIMI_API_KEY=your_kimi_api_key
 
-# 数据库配置
-DB_HOST=localhost
-DB_PORT=5432
-DB_NAME=cryptowatch
-DB_USER=postgres
-DB_PASSWORD=your_password
-
-# Web3 数据源
+# Web3 数据源（可选）
 COINGECKO_API_KEY=your_coingecko_key
 ETHERSCAN_API_KEY=your_etherscan_key
 ```
+
+> 💡 **提示**:
+> - 至少需要配置一个 LLM API 密钥（DeepSeek 或 Kimi）
+> - Web3 数据源 API 密钥是可选的，用于增强数据采集能力
 
 ## 📖 文档中心
 
@@ -302,49 +332,58 @@ ETHERSCAN_API_KEY=your_etherscan_key
 
 ## 📊 使用示例
 
-### 基础分析
-```python
-from cryptowatch import CryptoAnalyzer
+### 方式 1: 直接运行主程序
 
-# 初始化分析器
-analyzer = CryptoAnalyzer()
+最简单的方式是直接运行主程序，它会执行预设的示例分析：
+
+```bash
+python bettafish_mini.py
+```
+
+这将运行三个示例：
+- ✅ Ethereum 的完整分析
+- ✅ Bitcoin 的快速市场检查
+- ✅ 多个项目的对比分析
+
+### 方式 2: Python 脚本调用
+
+#### 完整分析
+```python
+from bettafish_mini import CryptoWatch
+
+# 初始化系统
+crypto_watch = CryptoWatch()
 
 # 分析单个加密货币
-result = analyzer.analyze("Bitcoin")
-
-# 输出结果
-print(f"📊 情感得分: {result.sentiment_score:.2f}")
-print(f"📈 趋势预测: {result.trend_prediction}")
-print(f"💡 投资建议: {result.recommendation}")
-print(f"⚠️  风险等级: {result.risk_level}")
-```
-
-### 批量分析
-```python
-# 分析多个加密货币
-cryptocurrencies = ["Bitcoin", "Ethereum", "Solana"]
-
-for crypto in cryptocurrencies:
-    result = analyzer.analyze(crypto)
-    print(f"\n{'='*50}")
-    print(f"📌 {crypto}")
-    print(f"{'='*50}")
-    print(result.summary())
-```
-
-### 自定义配置
-```python
-from cryptowatch import CryptoAnalyzer, Config
-
-# 自定义配置
-config = Config(
-    llm_provider="deepseek",
-    max_data_sources=10,
-    sentiment_threshold=0.6,
-    enable_real_time=True
+result = crypto_watch.analyze(
+    topic="Bitcoin",
+    coin_id="bitcoin",
+    save_report=True
 )
 
-analyzer = CryptoAnalyzer(config=config)
+# result 包含:
+# - data: 收集的所有数据
+# - analyses: 各专家的分析结果
+# - report: 生成的完整报告
+```
+
+#### 快速市场检查
+```python
+# 快速检查价格和市场数据
+price_data = crypto_watch.quick_market_check("ethereum")
+
+# 输出: 当前价格、24h变化、市值、交易量等
+```
+
+#### 项目对比分析
+```python
+# 对比多个项目
+results = crypto_watch.compare_projects([
+    ("Bitcoin", "bitcoin"),
+    ("Ethereum", "ethereum"),
+    ("Solana", "solana"),
+    ("BNB", "binancecoin")
+])
 ```
 
 ## 🤝 参与贡献
@@ -398,14 +437,6 @@ analyzer = CryptoAnalyzer(config=config)
 - [ ] 🌐 多语言支持
 - [ ] 🔔 Telegram/Discord Bot
 
-## 📈 项目统计
-
-<div align="center">
-
-![Alt](https://repobeats.axiom.co/api/embed/YOUR_EMBED_TOKEN.svg "Repobeats analytics image")
-
-</div>
-
 ## 🙏 致谢
 
 <table>
@@ -428,6 +459,63 @@ analyzer = CryptoAnalyzer(config=config)
 </table>
 
 特别感谢 [@666ghj](https://github.com/666ghj) 创建的 BettaFish 项目！
+
+## ❓ 常见问题 FAQ
+
+<details>
+<summary><strong>Q: 运行时提示 API 密钥错误怎么办？</strong></summary>
+
+**A:** 请确保：
+1. 已复制 `.env.example` 为 `.env`
+2. 在 `.env` 文件中填入了有效的 API 密钥
+3. API 密钥格式正确，没有多余的空格或引号
+
+```env
+# 正确示例
+DEEPSEEK_API_KEY=sk-xxxxxxxxxxxxx
+
+# 错误示例（不要添加引号）
+DEEPSEEK_API_KEY="sk-xxxxxxxxxxxxx"
+```
+</details>
+
+<details>
+<summary><strong>Q: 支持哪些加密货币的分析？</strong></summary>
+
+**A:** 支持 CoinGecko 上所有的加密货币。常用的 coin_id 包括：
+- Bitcoin: `bitcoin`
+- Ethereum: `ethereum`
+- BNB: `binancecoin`
+- Solana: `solana`
+- Cardano: `cardano`
+
+可以在 [CoinGecko](https://www.coingecko.com/) 上查找更多 coin_id。
+</details>
+
+<details>
+<summary><strong>Q: 生成的报告保存在哪里？</strong></summary>
+
+**A:** 报告默认保存在项目根目录的 `reports/` 文件夹中，文件名格式为 `{topic}_{timestamp}.md`。
+</details>
+
+<details>
+<summary><strong>Q: 如何只获取价格数据而不进行完整分析？</strong></summary>
+
+**A:** 使用 `quick_market_check()` 方法：
+```python
+crypto_watch = CryptoWatch()
+crypto_watch.quick_market_check("bitcoin")
+```
+</details>
+
+<details>
+<summary><strong>Q: 系统需要联网吗？</strong></summary>
+
+**A:** 是的，系统需要联网来：
+- 调用 LLM API（DeepSeek/Kimi）
+- 获取加密货币市场数据
+- 搜索相关新闻和社交媒体信息
+</details>
 
 ## 📄 许可证
 
