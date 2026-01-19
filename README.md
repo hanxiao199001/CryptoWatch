@@ -89,7 +89,7 @@ CryptoWatch/
 ├── 💬 forum_agents.py           # 论坛分析智能体
 ├── 📝 report_agent.py           # 报告生成智能体
 ├── ⛓️  web3_data_agent.py        # Web3数据智能体
-├── 🚀 bettafish_mini.py         # 主程序入口
+├── 🚀 cryptowatch.py         # 主程序入口
 ├── 📚 docs/                     # 项目文档
 │   ├── ARCHITECTURE.md       
 │   ├── USER_GUIDE.md         
@@ -145,7 +145,7 @@ nano .env  # 或 vim .env 或 code .env
 # python scripts/init_db.py
 
 # 6️⃣ 运行主程序
-python bettafish_mini.py
+python cryptowatch.py
 ```
 
 </details>
@@ -304,7 +304,7 @@ ETHERSCAN_API_KEY=your_etherscan_key
 
 ### 基础分析
 ```python
-from bettafish_mini import CryptoAnalyzer
+from cryptowatch import CryptoAnalyzer
 
 # 初始化分析器
 analyzer = CryptoAnalyzer()
@@ -334,7 +334,7 @@ for crypto in cryptocurrencies:
 
 ### 自定义配置
 ```python
-from bettafish_mini import CryptoAnalyzer, Config
+from cryptowatch import CryptoAnalyzer, Config
 
 # 自定义配置
 config = Config(

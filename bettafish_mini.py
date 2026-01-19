@@ -1,5 +1,5 @@
 """
-BettaFish Mini - 完整的Multi-Agent舆情分析系统
+CryptoWatch - 完整的Multi-Agent舆情分析系统
 整合所有组件,提供完整的分析服务
 """
 
@@ -9,9 +9,9 @@ from data_agents import DataAggregator
 from analysis_coordinator import AnalysisCoordinator
 
 
-class BettaFishMini:
+class CryptoWatch:
     """
-    BettaFish Mini 主系统
+    CryptoWatch 主系统
     完整的Multi-Agent舆情分析平台
     """
     
@@ -25,7 +25,7 @@ class BettaFishMini:
         self.analysis_coordinator = AnalysisCoordinator()
         
         print("="*70)
-        print("✅ BettaFish Mini 系统就绪!")
+        print("✅ CryptoWatch 系统就绪!")
         print("="*70 + "\n")
     
     def _print_banner(self):
@@ -33,7 +33,7 @@ class BettaFishMini:
         banner = """
 ╔══════════════════════════════════════════════════════════════════════╗
 ║                                                                      ║
-║                    🐟 BettaFish Mini v1.0                            ║
+║                    🐟 CryptoWatch v1.0                            ║
 ║                                                                      ║
 ║              Multi-Agent 舆情分析系统                                 ║
 ║                                                                      ║
@@ -168,7 +168,7 @@ def main():
     """主程序入口"""
     
     # 创建系统
-    betta = BettaFishMini()
+    betta = CryptoWatch()
     
     # ===== 示例1: 完整分析 =====
     print("\n" + "🔥"*35)

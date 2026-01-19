@@ -1,8 +1,8 @@
-# 🎓 BettaFish Mini - 项目学习总结
+# 🎓 CryptoWatch - 项目学习总结
 
 ## 📊 项目概览
 
-**项目名称**: BettaFish Mini  
+**项目名称**: CryptoWatch  
 **项目类型**: Multi-Agent舆情分析系统  
 **开发周期**: 10天 (2026-01-09 至 2026-01-18)  
 **代码行数**: 2000+  

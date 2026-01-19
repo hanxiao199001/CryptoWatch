@@ -17,7 +17,7 @@ load_dotenv()
 class ReportAgent:
     """
     报告生成Agent
-    类似 BettaFish 的 ReportEngine
+    报告生成引擎
     """
     
     def __init__(self):
