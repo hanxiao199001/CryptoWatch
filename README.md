@@ -1,3 +1,8 @@
+> ⚠️ **状态说明(2026-08-28)**:本项目为早期学习/演示项目,当前**不建议直接使用**:
+> - 依赖钉在 `langgraph 0.0.20` 远古版本,与当前 LangGraph 1.x 完全不兼容,需要重写(迁移要点见 [docs/UPGRADE_NOTES.md](docs/UPGRADE_NOTES.md));
+> - 实际代码中的多智能体编排为手写协调器,尚未真正接入 LangGraph;
+> - 部分数据源未实装:未配置 API Key 时新闻/情绪等数据返回内置模拟数据。
+
 <div align="center">
 
 # 🔍 CryptoWatch
